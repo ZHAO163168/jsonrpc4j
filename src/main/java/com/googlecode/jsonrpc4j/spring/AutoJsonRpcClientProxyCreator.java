@@ -52,7 +52,8 @@ public class AutoJsonRpcClientProxyCreator implements BeanFactoryPostProcessor, 
 					String jsonRpcPathAnnotation = JsonRpcService.class.getName();
 					if (annotationMetadata.isAnnotated(jsonRpcPathAnnotation)) {
 						String className = classMetadata.getClassName();
-						String path = (String) annotationMetadata.getAnnotationAttributes(jsonRpcPathAnnotation).get("value");
+//						String path = (String) annotationMetadata.getAnnotationAttributes(jsonRpcPathAnnotation).get("value");
+						String path =className  ;
 						logger.debug("Found JSON-RPC service to proxy [{}] on path '{}'.", className, path);
 						registerJsonProxyBean(defaultListableBeanFactory, className, path);
 					}
